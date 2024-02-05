@@ -1,0 +1,50 @@
+import java.util.Scanner;
+
+class U1_L6_Activity_One 
+{
+  public static void main(String[] args) 
+  {
+    
+    Scanner scan = new Scanner(System.in);
+  
+    double ans;
+    int x;
+    int count = 0;
+    int counter = 8;
+    ans = Math.random() * 101;
+    ans = Math.round(ans);
+    System.out.println("Guess the number! ");
+    
+    x = scan.nextInt();
+    
+    while (x != ans && count < 8)
+    {
+    if (x < ans)
+    {
+      count++;
+      System.out.println("Go Higher also you have " + counter + " guesses left. " );
+      
+      x = scan.nextInt();
+      
+      counter--;
+    }
+    else if (x > ans)
+    {
+      count++;
+      System.out.println("Go Lower also you have " + counter + " guesses left. ");
+      
+      x = scan.nextInt();
+      counter--;
+    }
+    }
+    if (ans == x)
+    {
+      System.out.println("You guessed it! The number was " + ans);
+    }
+    if (counter == 0)
+    {
+      System.out.println("You ran out of guesses the anser was " + ans);
+    }
+    
+  }
+}
